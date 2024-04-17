@@ -1,0 +1,86 @@
+
+
+Inicio: Ciudad D
+Tabla de Distancias:
+Nodo | Conocido | Distancia | Nodo Anterior
+---------------------------------------------
+ A   |  false   |   ∞       |    null
+ B   |  false   |   ∞       |    null
+ C   |  false   |   ∞       |    null
+ E   |  false   |   ∞       |    null
+ F   |  false   |   ∞       |    null
+ G   |  false   |   ∞       |    null
+ H   |  false   |   ∞       |    null
+---------------------------------------------
+
+Paso 1:
+- Nodo D conocido, distancia 0
+- Nodos adyacentes: A (peso 4), C (peso 6), F (peso 3)
+- Se actualizan las distancias en la tabla
+
+Tabla de Distancias después del paso 1:
+Nodo | Conocido | Distancia | Nodo Anterior
+---------------------------------------------
+ A   |  false   |     4     |      D
+ B   |  false   |     ∞     |    null
+ C   |  false   |     6     |      D
+ E   |  false   |     ∞     |    null
+ F   |  false   |     3     |      D
+ G   |  false   |     ∞     |    null
+ H   |  false   |     ∞     |    null
+---------------------------------------------
+
+Paso 2:
+- Se toma el nodo con distancia mínima de la tabla, que es F (distancia 3)
+- Nodos adyacentes: E (peso 5), H (peso 3)
+- Se actualizan las distancias en la tabla
+
+Tabla de Distancias después del paso 2:
+Nodo | Conocido | Distancia | Nodo Anterior
+---------------------------------------------
+ A   |  false   |     4     |      D
+ B   |  false   |     ∞     |    null
+ C   |  false   |     6     |      D
+ E   |  false   |     8     |      F
+ F   |  true    |     3     |      D
+ G   |  false   |     ∞     |    null
+ H   |  false   |     3     |      F
+---------------------------------------------
+
+Paso 3:
+- Se toma el nodo con distancia mínima de la tabla, que es A (distancia 4)
+- No hay nodos adyacentes desconocidos a A
+
+Paso 4:
+- Se toma el nodo con distancia mínima de la tabla, que es H (distancia 3)
+- Nodos adyacentes: G (peso 2)
+- Se actualizan las distancias en la tabla
+
+Tabla de Distancias después del paso 4:
+Nodo | Conocido | Distancia | Nodo Anterior
+---------------------------------------------
+ A   |  true    |     4     |      D
+ B   |  false   |     ∞     |    null
+ C   |  false   |     6     |      D
+ E   |  false   |     8     |      F
+ F   |  true    |     3     |      D
+ G   |  false   |     5     |      H
+ H   |  true    |     3     |      F
+---------------------------------------------
+
+Paso 5:
+- Se toma el nodo con distancia mínima de la tabla, que es G (distancia 5)
+- No hay nodos adyacentes desconocidos a G
+
+Paso 6:
+- Se toma el nodo con distancia mínima de la tabla, que es C (distancia 6)
+- No hay nodos adyacentes desconocidos a C
+
+Paso 7:
+- Se toma el nodo con distancia mínima de la tabla, que es E (distancia 8)
+- No hay nodos adyacentes desconocidos a E
+
+Resultado Final:
+- Se ha encontrado la distancia más corta desde la ciudad D a todas las demás ciudades en el grafo.
+
+Es importante tener en cuenta que el algoritmo de Dijkstra garantiza que las distancias encontradas son las más cortas posibles desde el nodo de origen a cada uno de los demás nodos en el grafo.
